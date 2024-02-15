@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "230606801572",
+    "project_id": "smartprayer-4887e",
+    "storage_bucket": "smartprayer-4887e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:230606801572:android:9509c43369df30fe66f431",
+        "android_client_info": {
+          "package_name": "com.example.smartprayer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "230606801572-mnn2m1kdhmre4340kqs0lvn4v8tqf79c.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.smartprayer",
+            "certificate_hash": "9a1b2f115f5610942f047c85897326c06198ca1c"
+          }
+        },
+        {
+          "client_id": "230606801572-i05dre1ih0lb40899670egedp4evlfil.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBSaohNY8aK-326c3blHb93ACWnGZ2A9MQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "230606801572-i05dre1ih0lb40899670egedp4evlfil.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "230606801572-8qiibcc7thlm0rucdk37jek77ol7cm11.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.smartprayer"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

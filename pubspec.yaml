@@ -1,0 +1,94 @@
+name: smartprayer
+description: A new Flutter project.
+
+
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.5 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  lottie: ^2.7.0
+  connectivity_plus: ^5.0.2
+  cupertino_icons: ^1.0.2
+  google_fonts: ^6.1.0
+  get: ^4.6.5
+  get_storage: ^2.1.1
+  flutter_native_splash: ^2.3.3
+  smooth_page_indicator: ^1.1.0
+  font_awesome_flutter: ^10.6.0
+  sliding_sheet2: ^2.0.1
+  iconsax: ^0.0.8
+  #firebase
+  firebase_core: ^2.24.2
+  firebase_auth: ^4.15.3
+  cloud_firestore: ^4.13.6
+  http: ^1.1.2
+  icons_plus: ^4.0.0
+  shimmer: ^3.0.0
+  table_calendar: ^3.0.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.1
+
+flutter:
+  uses-material-design: true
+  fonts:
+    - family: 'Poppins'
+      fonts:
+        - asset: assets/fonts/Poppins-Regular.ttf
+  
+  
+  assets:
+    - assets/images/onboarding/onbrd1.gif
+    - assets/images/onboarding/onbrd2.gif
+    - assets/images/onboarding/onbrd4.gif
+    - assets/icons/icon_profile.png
+    - assets/images/main.png
+    - assets/images/logo_final.png
+    - assets/icons/child_activities.png
+    - assets/icons/icon_profile.png
+    - assets/icons/namaz_log.png
+    - assets/icons/posture_detection.png
+    - assets/icons/quran.png
+    - assets/icons/rakat_counter.png
+    - assets/images/onboarding/onbrd5.gif
+    - assets/images/logo/applogo.png
+    - assets/images/login/email_recieve.gif
+    - assets/images/login/success.png
+    - assets/images/login/email_recieve.gif
+    - assets/animation/processing.json
+    - assets/home_page/
+  
+
+  
+  
+
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
