@@ -46,6 +46,7 @@ flutter:
   
   
   assets:
+    - assets/
     - assets/images/onboarding/onbrd1.gif
     - assets/images/onboarding/onbrd2.gif
     - assets/images/onboarding/onbrd4.gif
@@ -65,6 +66,10 @@ flutter:
     - assets/images/login/email_recieve.gif
     - assets/animation/processing.json
     - assets/home_page/
+    - assets/quran/chapters.json
+    - assets/quran/
+    - assets/images/quran_screen.png
+    - assets/quran/quean_screen.png
   
 
   
