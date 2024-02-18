@@ -26,11 +26,13 @@ class NavigationMenu extends StatelessWidget {
           controller.selectedIndex.value = index,
 
           destinations:  const [
-            NavigationDestination(icon: Icon(Iconsax.home), label: 'Home'),
+            Center(child: NavigationDestination(icon: Icon(Iconsax.home), label: 'Home')),
             NavigationDestination(icon: Icon(Iconsax.activity), label: 'A.I'),
             NavigationDestination(icon: Icon(Iconsax.book1), label: 'Quran'),
-            NavigationDestination(
-                icon: Icon(Iconsax.trade1), label: 'Namaz Track'),
+            Center(
+              child: NavigationDestination(
+                  icon: Icon(Iconsax.trade1), label: 'Namaz Track'),
+            ),
             NavigationDestination(icon: Icon(Iconsax.user), label: 'Profile'),
           ],
         ),
@@ -49,7 +51,7 @@ class NavigationController extends GetxController {
     Container(color: Colors.grey,child: const Center(
       child: Text('In Construction'),
     ),),
-    const QuranScreen(),
+    QuranScreen(),
     NamazTracker(),
     Container(color: Colors.yellow),
   ];
