@@ -9,7 +9,7 @@ import 'package:smartprayer/src/exception/platform_exceptions.dart';
 import 'package:smartprayer/src/features/authentication/screens/onboarding/onboarding.dart';
 import 'package:smartprayer/src/screens/email_verifcation.dart';
 import 'package:smartprayer/src/screens/login.dart';
-import 'package:smartprayer/src/utils/navigation_menu.dart';
+import 'package:smartprayer/src/routing/navigation_menu.dart';
 
 class AuthenticationRepository extends GetxController {
   static AuthenticationRepository get instance => Get.find();

@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import 'package:iconsax/iconsax.dart';
+import 'package:smartprayer/src/screens/Quran/quran_screen.dart';
 
 import 'package:smartprayer/src/screens/main_menu.dart';
 
@@ -48,7 +49,7 @@ class NavigationController extends GetxController {
     Container(color: Colors.grey,child: const Center(
       child: Text('In Construction'),
     ),),
-    Container(color: Colors.blue),
+    const QuranScreen(),
     NamazTracker(),
     Container(color: Colors.yellow),
   ];

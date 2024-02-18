@@ -22,7 +22,7 @@ class MainMenu extends StatelessWidget {
             color: Colors.black,
             itemBuilder: (context) => [
               PopupMenuItem(
-                  child: TextButton(child: Text(
+                  child: TextButton(child: const Text(
                       'Sign Out',
                       style: TextStyle(color: Colors.white),
                     ),
@@ -33,13 +33,13 @@ class MainMenu extends StatelessWidget {
           ),
           backgroundColor: Colors.transparent,
           elevation: 0,
-
           title: const Text(
             'Home',
             textAlign: TextAlign.center,
             style: TextStyle(color: Colors.white),
           ),
         ),
+
         body: Stack(
           fit: StackFit.passthrough,
           children: [
@@ -48,7 +48,7 @@ class MainMenu extends StatelessWidget {
               right: 0,
               child: Obx(
                 () => Container(
-                    width: double.maxFinite,
+                  width: double.maxFinite,
                     height: MediaQuery.of(context).size.height / 3,
                     decoration: BoxDecoration(
                       borderRadius: const BorderRadius.only(
@@ -59,7 +59,55 @@ class MainMenu extends StatelessWidget {
                         fit: BoxFit.fitWidth,
                         image: AssetImage(imageController.image.value),
                       ),
-                    )),
+                    ),
+                  child:  Row(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(left: 20.0,top: 60.0),
+                        child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Container(
+                            height: 123.0,
+                              width: 180.0,
+                              decoration: const BoxDecoration(
+                                borderRadius: BorderRadius.only(
+                                    topLeft: Radius.circular(8.0),
+                                    bottomLeft: Radius.circular(20.0),
+                                    bottomRight: Radius.circular(20.0),
+                                    topRight: Radius.circular(160.0)),
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: Color.fromRGBO(
+                                        05, 0, 0, 0.30), // Shadow color
+                                    spreadRadius: 5, // Spread radius
+                                    blurRadius: 7, // Blur radius
+                                    offset: Offset(0, 3), // Offset (X, Y)
+                                  ),
+                                ],
+                              ),
+                            child:  Column(
+
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text('NOW',style: TextStyle(color: Colors.grey),),
+                                Text('Fajar',style: TextStyle(fontSize: 38.0,fontWeight: FontWeight.bold,color: Colors.white)),
+                                SizedBox(
+                                  height: 20.0,
+                                ),
+                                Text('Upcomming  Prayer is Zuhr at 1.30 ',style: TextStyle(color: Colors.white,fontStyle: FontStyle.italic),),
+                              ],
+                            ),
+                            ),
+
+                          ],
+                        ),
+                      ),
+
+
+
+                    ],
+                  )),
               ),
             ),
             Positioned(
@@ -75,6 +123,7 @@ class MainMenu extends StatelessWidget {
                     ]),
                   ),
                 ))
+
           ],
         ));
   }
