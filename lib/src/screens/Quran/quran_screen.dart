@@ -78,7 +78,7 @@ class QuranScreen extends StatelessWidget {
         Get.find<PageController>().animateToPage(
           index,
           duration: const Duration(milliseconds: 500),
-          curve: Curves.ease,
+          curve: Curves.easeInCubic,
         );
       },
       child: Padding(
@@ -94,7 +94,7 @@ class QuranScreen extends StatelessWidget {
               ),
             ],
             borderRadius: controller.selectedIndex.value == index
-                ? const BorderRadius.only(topRight: Radius.circular(19.9),topLeft: Radius.circular(20))
+                ? const BorderRadius.only(topRight: Radius.circular(10 ),topLeft: Radius.circular(9.90))
                 : null,
             border: Border(
               bottom: BorderSide(
