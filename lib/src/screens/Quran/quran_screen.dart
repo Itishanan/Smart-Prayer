@@ -19,6 +19,7 @@ class QuranScreen extends StatelessWidget {
               child: Container(
                 decoration: BoxDecoration(
                     color: Colors.green,
+
                   borderRadius: BorderRadiusDirectional.circular(20)
                 ),
                 height: 160,
@@ -41,6 +42,26 @@ class QuranScreen extends StatelessWidget {
                     QuranTile(quranTile: 'PAGE',isSelected: false),
                   ],
                 ),
+              ),
+            ),
+            SizedBox(
+              height: 430,
+              child: PageView(
+
+                children: [
+                  Container(
+                    color: Colors.red,
+                  ),
+                  Container(
+                    color: Colors.blue,
+                  ),
+                  Container(
+                    color: Colors.green,
+                  ),
+                  Container(
+                    color: Colors.yellow,
+                  ),
+                ],
               ),
             )
 
