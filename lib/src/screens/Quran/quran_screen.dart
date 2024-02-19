@@ -33,7 +33,6 @@ class QuranScreen extends StatelessWidget {
         ),
       ),
       body: SingleChildScrollView(
-        clipBehavior: Clip.antiAlias,
         child: Column(
           children: [
             Padding(

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 
 import 'package:firebase_core/firebase_core.dart';
@@ -9,10 +10,12 @@ import 'firebase_options.dart';
 import 'myapp.dart';
 
 Future<void> main() async {
+
   runApp(const MyApp());
   //widget binding
   final WidgetsBinding widgetsBinding =
       WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
 
   //init local storage
   await GetStorage.init();
