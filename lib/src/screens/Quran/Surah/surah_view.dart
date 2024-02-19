@@ -48,15 +48,25 @@ class SurahListView extends StatelessWidget {
               // Navigate to another screen based on the surah's ID
             },
             child: Container(
+
               height: 100,
               width: double.infinity,
               decoration: BoxDecoration(
-                color: Colors.grey.withOpacity(0.1),
+               gradient: const LinearGradient(
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                  colors: [
+                    Colors.blue,
+                    Colors.blueAccent,
+                  ],
+                ),
+                color: Colors.blue.withOpacity(0.03),
                 borderRadius: const BorderRadius.only(
                   topLeft: Radius.circular(20),
                   bottomRight: Radius.circular(20),
                 ),
               ),
+
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Row(
