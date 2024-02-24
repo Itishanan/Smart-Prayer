@@ -35,6 +35,7 @@ class QuranScreen extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
+
             Padding(
               padding: const EdgeInsets.all(20),
               child: Container(

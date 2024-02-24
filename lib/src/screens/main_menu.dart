@@ -64,7 +64,7 @@ class MainMenu extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Container(
-                            height: 123.0,
+                            height: 124,
                               width: 180.0,
                               decoration: const BoxDecoration(
                                 borderRadius: BorderRadius.only(
@@ -91,7 +91,7 @@ class MainMenu extends StatelessWidget {
                                 SizedBox(
                                   height: 20.0,
                                 ),
-                                Text('Upcomming  Prayer is Zuhr at 1.30 ',style: TextStyle(color: Colors.white,fontStyle: FontStyle.italic),),
+                                Text('Next Prayer: Zuhr at 1.30 ',style: TextStyle(color: Colors.white,fontStyle: FontStyle.italic),),
                               ],
                             ),
                             ),

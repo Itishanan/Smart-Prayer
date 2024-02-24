@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
+import '../../../../utils/linepainter.dart';
 import 'fullsurah_controller.dart';
 
 class SurahDetailScreen extends StatelessWidget {
@@ -8,7 +8,7 @@ class SurahDetailScreen extends StatelessWidget {
   final SurahDetailController _surahDetailController =
       Get.put(SurahDetailController());
 
-  SurahDetailScreen({Key? key, required this.surahId}) : super(key: key) {
+  SurahDetailScreen({super.key, required this.surahId}) {
     _surahDetailController.fetchSurahDetails(surahId);
   }
 
@@ -17,13 +17,16 @@ class SurahDetailScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         excludeHeaderSemantics: true,
-        title: Text('Surah Details',style: TextStyle(color: Colors.blue),),
+        title: const Text(
+          'Surah Details',
+          style: TextStyle(color: Colors.blue),
+        ),
       ),
       body: SingleChildScrollView(
-        padding: EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16.0),
         child: Obx(() {
           if (_surahDetailController.surahDetails.isEmpty) {
-            return Center(child: CircularProgressIndicator());
+            return const Center(child: CircularProgressIndicator());
           } else {
             return _buildSurahDetails(_surahDetailController.surahDetails);
           }
@@ -33,12 +36,13 @@ class SurahDetailScreen extends StatelessWidget {
   }
 
   Widget _buildSurahDetails(RxMap<dynamic, dynamic> surahDetails) {
-    final Map surahDetailsMap = surahDetails.value;
+
     // Now surahDetailsMap is of type Map<String, dynamic>
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Container(
+          alignment: Alignment.center,
           height: 250,
           width: double.infinity,
           decoration: BoxDecoration(
@@ -47,7 +51,7 @@ class SurahDetailScreen extends StatelessWidget {
                 color: Colors.grey.withOpacity(0.5),
                 spreadRadius: 5,
                 blurRadius: 7,
-                offset: Offset(0, 3),
+                offset: const Offset(0, 3),
               ),
             ],
             gradient: LinearGradient(
@@ -58,7 +62,7 @@ class SurahDetailScreen extends StatelessWidget {
                 Colors.blue.shade100,
               ],
             ),
-            borderRadius: BorderRadius.only(
+            borderRadius: const BorderRadius.only(
               topLeft: Radius.circular(100),
               bottomRight: Radius.circular(20),
               bottomLeft: Radius.circular(20),
@@ -66,9 +70,9 @@ class SurahDetailScreen extends StatelessWidget {
             ),
           ),
           child: Stack(
-            alignment: Alignment.centerLeft,
+            alignment: Alignment.center,
             children: [
-              Positioned(
+              const Positioned(
                 left: 0,
                 right: 0,
                 top: 0,
@@ -90,18 +94,18 @@ class SurahDetailScreen extends StatelessWidget {
                 child: Center(
                   child: Text(
                     ' ${surahDetails['transliteration']}',
-                    style: TextStyle(fontSize: 40, color: Colors.white),
+                    style: const TextStyle(fontSize: 40, color: Colors.white),
                   ),
                 ),
-              ),//ARABIC NAME
+              ), //ARABIC NAME
               Positioned(
                 top: 80,
                 left: 100,
                 child: Text(
                   ' ${surahDetails['translation']}',
-                  style: TextStyle(fontSize: 16, color: Colors.white),
+                  style: const TextStyle(fontSize: 16, color: Colors.white),
                 ),
-              ),//ENGLISH NAME
+              ), //ENGLISH NAME
               Positioned(
                 top: 140,
                 left: 100,
@@ -109,22 +113,21 @@ class SurahDetailScreen extends StatelessWidget {
                   children: [
                     Text(
                       '${surahDetails['type']}'.toUpperCase(),
-                      style: TextStyle(fontSize: 12, color: Colors.white),
+                      style: const TextStyle(fontSize: 12, color: Colors.white),
                     ),
+                    const SizedBox(width: 10),
                     Text(
                       ' ${surahDetails['total_verses']} VERSES',
-                      style: TextStyle(fontSize: 12, color: Colors.white),
+                      style: const TextStyle(fontSize: 12, color: Colors.white),
                     ),
-
                   ],
                 ),
               ), //TYPE
-             //TOTAL VERSES
-              Positioned(
-              top: 50,
-                child: Container(
+              //TOTAL VERSES
+              const Positioned(
+                top: 50,
+                child: SizedBox(
                   height: 300,
-
                   child: Image(
                     image: AssetImage('assets/quran/bsml_ar.png'),
                   ),
@@ -135,30 +138,96 @@ class SurahDetailScreen extends StatelessWidget {
                 left: 0,
                 right: 10,
                 child: CustomPaint(
-                  painter: LinePainter(),
+                  painter: LinePainter(endPoint: const Offset(250, 0) ,startPoint: const Offset(70 ,0 ), color: Colors.white, strokeWidth: 1.0),
                   child: Container(),
                 ),
-              ),// LINE
+              ), // LINE
             ],
           ),
         ),
-        SizedBox(height: 16),
-        Text(
-          'Verses:',
-          style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-        ),
+        const SizedBox(height: 16),
         Column(
           mainAxisAlignment: MainAxisAlignment.end,
           crossAxisAlignment: CrossAxisAlignment.end,
           children: (surahDetails['verses'] as List).map<Widget>((verse) {
-            return ListTile(
+            return SingleChildScrollView(
+              child: Column(
 
-              leading: Text(
-                '${verse['id']}',
-                style: TextStyle(fontSize: 20, color: Colors.black),
-            ),
-              title: Text(verse['text'],style: TextStyle(fontSize: 30),),
-              subtitle: Text(verse['translation']),
+                children: [
+                  Column(
+                    children: [
+                      Container(
+                        height: 30,
+                        width: 320,
+                        decoration: BoxDecoration(
+                          color: Colors.blue.withOpacity(0.1),
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        padding: const EdgeInsets.symmetric(horizontal: 8),
+                        child: Row(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Container(
+                              alignment: Alignment.center,
+                              height: 20,
+                              width: 20,
+                              decoration: BoxDecoration(
+                                color: Colors.blue,
+                                borderRadius: BorderRadius.circular(20),
+                              ),
+                              child: Text(
+                                '${verse['id']}',
+                                style: const TextStyle(fontSize: 16, color: Colors.white),
+                              ),
+                            ),
+                            IconButton(
+                              alignment: Alignment.topCenter,
+                              iconSize: 20,
+                              onPressed: () {},
+                              icon: const Icon(
+
+                                Icons.bookmark_border,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Container(
+                        padding: const EdgeInsets.symmetric(horizontal: 8),
+                        alignment: Alignment.bottomRight,
+                        width: double.infinity - 20,
+                        child: Text(
+                          verse['text'],
+                          textDirection: TextDirection.rtl,
+                          style: const TextStyle(
+                            fontSize: 30,
+                          ),
+                        ),
+                      ),
+                      const SizedBox(height: 8),
+                      Container(
+                        padding: const EdgeInsets.symmetric(horizontal: 8),
+                        width: double.infinity,
+                        child: Text(
+                          verse['translation'],
+                        ),
+                      ),
+
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: CustomPaint(
+                          painter: LinePainter(endPoint: const Offset(300, 0) ,startPoint: const Offset(0 ,0 ), color: Colors.blue, strokeWidth: 0.1),),
+                        )
+                    ],
+                  ),
+                ],
+              ),
             );
           }).toList(),
         ),
@@ -168,23 +237,4 @@ class SurahDetailScreen extends StatelessWidget {
 }
 
 
-class LinePainter extends CustomPainter {
-  @override
-  void paint(Canvas canvas, Size size) {
-    Paint paint = Paint()
-      ..color = Colors.white
-      ..strokeWidth = 1.0
-      ..strokeCap = StrokeCap.round;
-
-    Offset startPoint = Offset(70, 0); // Adjust these points as needed
-    Offset endPoint = Offset(250, 0); // Adjust these points as needed
-
-    canvas.drawLine(startPoint, endPoint, paint);
-  }
-
-  @override
-  bool shouldRepaint(CustomPainter oldDelegate) {
-    return false;
-  }
-}
 

@@ -2,6 +2,8 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
 import 'package:smartprayer/src/helper/networkmanager/networkmanager.dart';
 
@@ -11,7 +13,8 @@ class PrayerController extends GetxController {
   final RxList<bool> previousPrayers = List.generate(5, (_) => false).obs;
   final Rx<DateTime> focusedDay = DateTime.now().obs;
   final Rx<int> streak = 0.obs; // Streak counter
-  final Rx<DateTime> lastPrayedDate = DateTime.now().subtract(const Duration(days: 1)).obs;
+  final Rx<DateTime> lastPrayedDate =
+      DateTime.now().subtract(const Duration(days: 1)).obs;
   final NetworkManager networkManager = Get.put(NetworkManager());
 
   @override
@@ -46,11 +49,14 @@ class PrayerController extends GetxController {
 
         if (userId.isNotEmpty) {
           await FirebaseFirestore.instance
-              .collection('NamazLog')  // Collection for users
-              .doc(userId)          // Document for current user
-              .collection('prayers') // Collection for prayers under the current user
-              .doc(selectedDate.value.toString()) // Document for prayers for a specific date
+              .collection('NamazLog') // Collection for users
+              .doc(userId) // Document for current user
+              .collection(
+                  'prayers') // Collection for prayers under the current user
+              .doc(selectedDate.value
+                  .toString()) // Document for prayers for a specific date
               .set(prayerData);
+        SnackBar(content: Text('Data Saved'));
           if (kDebugMode) {
             print("UPdated");
           }
@@ -71,10 +77,13 @@ class PrayerController extends GetxController {
       if (userId.isNotEmpty) {
         final snapshot = await FirebaseFirestore.instance
             .collection('NamazLog') // Collection for users
-            .doc(userId)         // Document for current user
-            .collection('prayers') // Collection for prayers under the current user
+            .doc(userId) // Document for current user
+            .collection(
+                'prayers') // Collection for prayers under the current user
             .doc(date.toString()) // Document for prayers for a specific date
             .get();
+
+        Fluttertoast.showToast(msg: "Data Fetched");
 
         if (snapshot.exists) {
           final data = snapshot.data();
@@ -95,7 +104,6 @@ class PrayerController extends GetxController {
       }
     }
   }
-
 
   Future<bool> isConnectedToInternet() async {
     // Get the current instance of NetworkManager
