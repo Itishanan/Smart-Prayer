@@ -53,6 +53,7 @@ flutter:
     - assets/images/onboarding/onbrd1.gif
     - assets/images/onboarding/onbrd2.gif
     - assets/images/onboarding/onbrd4.gif
+    - assets/images/prayer_divider.png
     - assets/icons/icon_profile.png
     - assets/images/main.png
     - assets/images/logo_final.png

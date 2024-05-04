@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 import '../../src/common_widgets/login/divider.dart';
 import '../../src/constants/colors.dart';
 import 'api_service.dart';
@@ -19,18 +20,10 @@ class ayaoftheday extends StatelessWidget {
         builder: (context, snapshot) {
           switch (snapshot.connectionState) {
             case ConnectionState.none:
-              return const Icon(Icons.sync_problem);
+              return  Lottie.asset('assets/animation/loading.json');
             case ConnectionState.waiting:
             case ConnectionState.active:
-              return const Center(
-                  child:
-
-                CircularProgressIndicator(
-
-                  semanticsValue: 'Loading',
-                  strokeWidth: 0.5,
-                )
-              );
+              return  Lottie.asset('assets/animation/loading.json');
             case ConnectionState.done:
               return Container(
                   width: MediaQuery.of(context).size.width - 15,

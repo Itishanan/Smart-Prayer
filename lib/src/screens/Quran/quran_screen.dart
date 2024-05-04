@@ -149,9 +149,8 @@ class QuranScreen extends StatelessWidget {
                   scrollDirection: Axis.horizontal,
                   children: [
                     buildQuranTile('SURAH', 0),
-                    buildQuranTile('PARA', 1),
-                    buildQuranTile('JUZ', 2),
-                    buildQuranTile('PAGE', 3),
+                    buildQuranTile('DIKHR', 1),
+
                   ],
                 ),
               ),
@@ -167,8 +166,7 @@ class QuranScreen extends StatelessWidget {
                 children: [
                   SurahView(),
                   Container(color: Colors.blue),
-                  Container(color: Colors.green),
-                  Container(color: Colors.yellow),
+
                 ],
               ),
             ),
