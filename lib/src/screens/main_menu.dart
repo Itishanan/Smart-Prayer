@@ -4,10 +4,11 @@ import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:lottie/lottie.dart';
 import 'package:smartprayer/home/ayaoftheday/api_service.dart';
-import 'package:smartprayer/home/ayaoftheday/aya_of_the_day.dart';
-import 'package:smartprayer/src/common_widgets/login/divider.dart';
+
+import 'package:smartprayer/src/common_widgets/posturedetectcarousel.dart';
 import 'package:smartprayer/src/controllers/home/image_controller_home.dart';
 import 'package:smartprayer/src/controllers/prayertime_controller.dart';
+
 import '../../home/ayaoftheday/aya_of_the_day_container.dart';
 import '../common_widgets/childactivitescontainer.dart';
 import '../common_widgets/prayer_times.dart';
@@ -26,21 +27,7 @@ class MainMenu extends StatelessWidget {
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(
-        leading: PopupMenuButton(
-          icon: const Icon(Iconsax.menu_14, color: Colors.white),
-          color: Colors.black,
-          itemBuilder: (context) => [
-            PopupMenuItem(
-              child: TextButton(
-                child: const Text(
-                  'Sign Out',
-                  style: TextStyle(color: Colors.white),
-                ),
-                onPressed: () => AuthenticationRepository.instance.logout(),
-              ),
-            )
-          ],
-        ),
+
         backgroundColor: Colors.transparent,
         elevation: 0,
       ),
@@ -57,7 +44,31 @@ class MainMenu extends StatelessWidget {
                   children: [
                     ayaoftheday(apiService: _apiService),
                     const SizedBox(
-                      height: 10.0,
+                      height: 15.0,
+                    ),
+                    CarouselSlider(
+                      options: CarouselOptions(
+                        height: 130,
+                        autoPlay: true,
+                        autoPlayInterval: const Duration(seconds: 5),
+                        enlargeCenterPage: true,
+                        enableInfiniteScroll: true,
+
+
+                      ),
+                      items:   [
+                        const childactivitescontainer(),
+                        PostureDetectionCarousel(top: 0,  bottom: 10),
+
+                      ]
+                    ),
+                    const SizedBox(
+                      height: 10,
+                    ),
+
+
+                    const SizedBox(
+                      height: 10,
                     ),
                     CarouselSlider(
                       options: CarouselOptions(

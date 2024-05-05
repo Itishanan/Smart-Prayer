@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:smartprayer/src/controllers/prayertime_controller.dart';
 import 'package:table_calendar/table_calendar.dart';
 import '../controllers/namaztracker_controller.dart';
 
 class NamazTracker extends StatelessWidget {
   final PrayerController prayerController = Get.put(PrayerController());
+  final PrayerTimesController prayerTimeController = Get.put(PrayerTimesController());
 
   @override
   Widget build(BuildContext context) {

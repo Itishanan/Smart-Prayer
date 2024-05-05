@@ -35,6 +35,12 @@ dependencies:
   adhan: ^2.0.0+1
   location: ^6.0.1
   carousel_slider: ^4.2.1
+  google_mlkit_pose_detection: ^0.12.0
+  image_picker: ^1.0.8
+  camera: ^0.10.5+9
+  video_player: ^2.8.6
+  firebase_storage: ^11.6.9
+  google_sign_in: ^6.2.1
 
 dev_dependencies:
   flutter_test:
@@ -50,7 +56,7 @@ flutter:
   
   
   assets:
-    - assets/
+    - assets/images/
     - assets/images/onboarding/onbrd1.gif
     - assets/images/onboarding/onbrd2.gif
     - assets/images/onboarding/onbrd4.gif
@@ -77,6 +83,7 @@ flutter:
     - assets/images/quran_screen.png
     - assets/quran/quean_screen.png
     - assets/images/childlearning.png
+    - assets/videos/
   
 
   

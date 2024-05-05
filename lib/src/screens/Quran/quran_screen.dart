@@ -16,10 +16,10 @@ class QuranScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        leading: IconButton(
+       /* leading: IconButton(
           icon: const Icon(Icons.menu),
           onPressed: () {},
-        ),
+        ),*/
         actions: [
           IconButton(
             onPressed: () {},

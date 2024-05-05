@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
+
+import '../screens/child_activites.dart';
 
 
 class childactivitescontainer extends StatelessWidget {
@@ -38,22 +42,10 @@ class childactivitescontainer extends StatelessWidget {
       width: MediaQuery.of(context).size.width - 30,
       child:  Stack(
         children: [
+
           Positioned(
             top: 20,
-            left: 20,
-            child: Text(
-              'Explore Now',
-              style: TextStyle(
-                fontSize: 12,
-                color: Colors.white,
-
-              ),
-            ),
-          ),
-
-          Positioned(
-            top: 40,
-            left: 20,
+            left: 10,
             child: Text(
               'Explore Activites',
               style: TextStyle(
@@ -64,8 +56,8 @@ class childactivitescontainer extends StatelessWidget {
             ),
           ),
           Positioned(
-            top: 65,
-            left: 20,
+            top: 50,
+            left: 10,
             child: SizedBox(
 
               height: 150,
@@ -83,23 +75,23 @@ class childactivitescontainer extends StatelessWidget {
             top: 85,
             left: 10,
             child: SizedBox(
-              width: 130,
+              width: 80,
               height: 35,
               child:TextButton(
                 style: TextButton.styleFrom(
                   backgroundColor: Colors.white,
                 ),
-                onPressed: () {},
+                onPressed: (){Get.to(() => ChildActivities());},
                 child: const Text('Get Start'),
 
               ),
             ),
           ), Positioned(
-            bottom: 0,
+            bottom: 12,
             right: 0,
             child: SizedBox(
 
-              height: 150,
+              height: 130,
               child: Image(
                 image: AssetImage('assets/images/childlearning.png'),
               ),

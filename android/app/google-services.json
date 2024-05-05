@@ -14,11 +14,11 @@
       },
       "oauth_client": [
         {
-          "client_id": "230606801572-mnn2m1kdhmre4340kqs0lvn4v8tqf79c.apps.googleusercontent.com",
+          "client_id": "230606801572-083q97st5erdslrp2ti2gvf71m3pm11t.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.example.smartprayer",
-            "certificate_hash": "9a1b2f115f5610942f047c85897326c06198ca1c"
+            "certificate_hash": "dcb3d24d836cde76702b67560dd0bf863313c0c8"
           }
         },
         {

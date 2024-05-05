@@ -63,7 +63,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '230606801572',
     projectId: 'smartprayer-4887e',
     storageBucket: 'smartprayer-4887e.appspot.com',
-    androidClientId: '230606801572-mnn2m1kdhmre4340kqs0lvn4v8tqf79c.apps.googleusercontent.com',
+    androidClientId: '230606801572-083q97st5erdslrp2ti2gvf71m3pm11t.apps.googleusercontent.com',
     iosClientId: '230606801572-8qiibcc7thlm0rucdk37jek77ol7cm11.apps.googleusercontent.com',
     iosBundleId: 'com.example.smartprayer',
   );

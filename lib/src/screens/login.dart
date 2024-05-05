@@ -47,7 +47,7 @@ class LoginScreen extends StatelessWidget {
                       controller: controller.email,
                       validator: (value) => Validator.validateEmail(value),
                       decoration: const InputDecoration(
-                          prefixIcon: Icon(Iconsax.direct_right),
+                          prefixIcon: Icon(Icons.mail_outline),
                           labelText: 'E-Mail'),
                     ),
                     const SizedBox(

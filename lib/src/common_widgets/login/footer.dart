@@ -1,7 +1,8 @@
-
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-class  footer_login extends StatelessWidget {
+import 'package:smartprayer/src/data/repository/authentication_repository.dart';
+
+class footer_login extends StatelessWidget {
   const footer_login({
     super.key,
   });
@@ -11,8 +12,13 @@ class  footer_login extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        IconButton(onPressed: (){}, icon: FaIcon(FontAwesomeIcons.google)),
-        IconButton(onPressed: (){}, icon: FaIcon(FontAwesomeIcons.facebook))
+        IconButton(
+            onPressed: () {
+              signInWithGoogle()
+                  .then((value) => AuthenticationRepository().screenRedirect());
+            },
+            icon: FaIcon(FontAwesomeIcons.google)),
+        /* IconButton(onPressed: (){}, icon: FaIcon(FontAwesomeIcons.facebook))*/
       ],
     );
   }

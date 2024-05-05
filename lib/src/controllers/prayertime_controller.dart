@@ -7,6 +7,7 @@ class PrayerTime {
   final String name;
   final DateTime time;
 
+
   PrayerTime({required this.name, required this.time});
 }
 
@@ -41,6 +42,8 @@ class PrayerTimesController extends GetxController {
         PrayerTime(name: 'Asr', time: prayerTimes.asr),
         PrayerTime(name: 'Maghrib', time: prayerTimes.maghrib),
         PrayerTime(name: 'Isha', time: prayerTimes.isha),
+        PrayerTime(name: 'Sunrise', time: prayerTimes.sunrise),
+
       ]);
     } catch (e) {
       if (kDebugMode) {
