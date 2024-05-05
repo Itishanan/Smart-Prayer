@@ -8,6 +8,8 @@ import 'package:smartprayer/src/common_widgets/login/divider.dart';
 import 'package:smartprayer/src/controllers/home/image_controller_home.dart';
 import 'package:smartprayer/src/controllers/prayertime_controller.dart';
 import '../../home/ayaoftheday/aya_of_the_day_container.dart';
+import '../common_widgets/childactivitescontainer.dart';
+import '../common_widgets/prayer_times.dart';
 import '../data/repository/authentication_repository.dart';
 
 class MainMenu extends StatelessWidget {
@@ -44,6 +46,33 @@ class MainMenu extends StatelessWidget {
       body: Stack(
         fit: StackFit.passthrough,
         children: [
+          Scrollbar(
+            radius: const Radius.circular(10),
+            child: SingleChildScrollView(
+              padding: const EdgeInsets.only(top: 270.0),
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Column(
+                  children: [
+                    ayaoftheday(apiService: _apiService),
+                    const SizedBox(
+                      height: 10.0,
+                    ),
+
+                    const childactivitescontainer(),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    Prayer_times(prayerTimesController: _prayerTimesController),
+
+
+
+
+                  ],
+                ),
+              ),
+            ),
+          ),
           Positioned(
             left: 0,
             right: 0,
@@ -81,7 +110,7 @@ class MainMenu extends StatelessWidget {
                       children: [
                         Container(
                           width: 165,
-                          height: 100,
+                          height: 120,
                           decoration: BoxDecoration(
                             gradient: LinearGradient(
                               begin: Alignment.topRight,
@@ -98,28 +127,32 @@ class MainMenu extends StatelessWidget {
                               topRight: Radius.circular(50),
                             ),
                           ),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Text('NOW',
+                          child:
+                          Padding(
+                            padding: const EdgeInsets.only(left: 5.0, top: 10.0),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text('NOW',
+                                    style: TextStyle(
+                                        color: Colors.white70, fontSize: 10.0)),
+                                Text(
+                                  '${currentPrayer.name.capitalizeFirst}',
+                                  style: const TextStyle(
+                                      fontSize: 38.0,
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.white),
+                                ),
+                                SizedBox(height: 5.0),
+                                Text(
+                                  'Next Prayer: ${nextPrayer.name.capitalizeFirst} at ${nextPrayer.time.toLocal().toIso8601String().substring(11, 16)}',
                                   style: TextStyle(
-                                      color: Colors.white70, fontSize: 10.0)),
-                              Text(
-                                '${currentPrayer.name.capitalizeFirst}',
-                                style: const TextStyle(
-                                    fontSize: 38.0,
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.white),
-                              ),
-                              SizedBox(height: 5.0),
-                              Text(
-                                'Next Prayer: ${nextPrayer.name.capitalizeFirst} at ${nextPrayer.time.toLocal().toIso8601String().substring(11, 16)}',
-                                style: TextStyle(
-                                    color: Colors.white70,
-                                    fontStyle: FontStyle.italic),
-                              ),
-                            ],
+                                      color: Colors.white70,
+                                      fontStyle: FontStyle.italic),
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       ],
@@ -130,99 +163,12 @@ class MainMenu extends StatelessWidget {
                 }
               }),
             ),
-          ),
-          Positioned(
-            top: 270,
-            child: SingleChildScrollView(
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Column(
-                  children: [
-                    ayaoftheday(apiService: _apiService),
-                    const SizedBox(
-                      height: 10.0,
-                    ),
-                    Container(
-                      width: MediaQuery.of(context).size.width - 15,
-                      height: 200,
-                      decoration: const BoxDecoration(
-
-                        boxShadow: [
-                          BoxShadow(
-                            color: Color.fromRGBO(
-                                217, 156, 156, 0.3803921568627451),
-                            spreadRadius: 5,
-                            blurRadius: 7,
-                            offset: Offset(0, 3),
-                          ),
-                        ],
-                        color: Colors.white,
-                        borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(8.0),
-                            bottomLeft: Radius.circular(20.0),
-                            bottomRight: Radius.circular(20.0),
-                            topRight: Radius.circular(68.0)),
-                      ),
-                      child: Padding(
-                        padding: const EdgeInsets.only(
-                            bottom: 0, left: 12.0, right: 12.0, top: 12.0),
-                        child: SingleChildScrollView(
-                          scrollDirection: Axis.vertical,
-                          child: ConstrainedBox(
-                            constraints: BoxConstraints(
-                              maxWidth: MediaQuery.of(context).size.width - 15,
-                            ),
-                            child: Column(
-                              children: [
-                                Text("' Prayer Times '",
-                                    style:
-                                        Theme.of(context).textTheme.titleLarge),
-
-                                const SizedBox(
-                                  height: 8,
-                                ),
-                                Obx(() {
-                                  return Column(
-                                    children: _prayerTimesController.prayerTimes
-                                        .map((time) {
-                                      return Padding(
-                                        padding: const EdgeInsets.all(8.0),
-                                        child: Row(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.spaceBetween,
-                                          children: [
-                                            Text(time.name,
-                                                style: Theme.of(context)
-                                                    .textTheme
-                                                    .titleLarge),
-                                            Text(
-                                                time.time
-                                                    .toLocal()
-                                                    .toIso8601String()
-                                                    .substring(11, 16),
-                                                style: Theme.of(context)
-                                                    .textTheme
-                                                    .titleMedium),
-
-                                          ],
-                                        ),
-                                      );
-                                    }).toList(),
-                                  );
-                                }),
-                              ],
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
           )
         ],
       ),
     );
   }
 }
+
+
+

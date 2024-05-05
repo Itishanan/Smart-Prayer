@@ -34,8 +34,8 @@ class QuranScreen extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         child: Column(
+          
           children: [
-
             Padding(
               padding: const EdgeInsets.all(20),
               child: Container(
@@ -48,7 +48,7 @@ class QuranScreen extends StatelessWidget {
                       offset: Offset(0, 3),
                     ),
                   ],
-
+        
                   gradient: LinearGradient(
                     begin: Alignment.topLeft,
                     end: Alignment.bottomRight,
@@ -76,11 +76,11 @@ class QuranScreen extends StatelessWidget {
                         style: TextStyle(
                           fontSize: 12,
                           color: Colors.white,
-
+        
                         ),
                       ),
                     ),
-
+        
                     Positioned(
                       top: 50,
                       left: 20,
@@ -97,14 +97,14 @@ class QuranScreen extends StatelessWidget {
                       top: 80,
                       left: 20,
                       child: SizedBox(
-
+        
                         height: 150,
                         child: Text(
                           'Ayah No 3',
                           style: TextStyle(
                             fontSize: 12,
                             color: Colors.white,
-
+        
                           ),
                         ),
                       ),
@@ -121,7 +121,7 @@ class QuranScreen extends StatelessWidget {
                           ),
                           onPressed: () {},
                           child: const Text('Continue Reading'),
-
+        
                         ),
                       ),
                     ),
@@ -129,7 +129,7 @@ class QuranScreen extends StatelessWidget {
                       bottom: 40,
                       right: 0,
                       child: SizedBox(
-
+        
                         height: 150,
                         child: Image(
                           image: AssetImage('assets/images/quran_screen.png'),
@@ -150,7 +150,7 @@ class QuranScreen extends StatelessWidget {
                   children: [
                     buildQuranTile('SURAH', 0),
                     buildQuranTile('DIKHR', 1),
-
+        
                   ],
                 ),
               ),
@@ -166,7 +166,7 @@ class QuranScreen extends StatelessWidget {
                 children: [
                   SurahView(),
                   Container(color: Colors.blue),
-
+        
                 ],
               ),
             ),
