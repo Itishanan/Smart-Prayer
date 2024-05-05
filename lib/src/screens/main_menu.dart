@@ -1,3 +1,4 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
@@ -58,8 +59,26 @@ class MainMenu extends StatelessWidget {
                     const SizedBox(
                       height: 10.0,
                     ),
+                    CarouselSlider(
+                      options: CarouselOptions(
+                        height: 130,
+                        autoPlay: true,
+                        autoPlayInterval: const Duration(seconds: 5),
+                        enlargeCenterPage: true,
+                        enableInfiniteScroll: true,
 
-                    const childactivitescontainer(),
+                      ),
+                      items: const [
+                        childactivitescontainer(),
+                        childactivitescontainer(),
+                        childactivitescontainer(),
+                      ]
+                    ),
+
+                    const SizedBox(
+                      height: 10,
+                    ),
+
                     const SizedBox(
                       height: 10,
                     ),
