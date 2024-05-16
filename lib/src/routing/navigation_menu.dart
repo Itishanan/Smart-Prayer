@@ -6,9 +6,10 @@ import 'package:smartprayer/src/screens/Quran/quran_screen.dart';
 
 import 'package:smartprayer/src/screens/main_menu.dart';
 
+import '../personalization/screens/profile/widgets/profile.dart';
 import '../screens/ai_screen.dart';
 import '../screens/namaz_tracker.dart';
-import '../screens/profile_screen.dart';
+
 
 class NavigationMenu extends StatelessWidget {
   const NavigationMenu({super.key});
@@ -52,6 +53,6 @@ class NavigationController extends GetxController {
     aiscreen(),
     QuranScreen(),
     NamazTracker(),
-   ProfileScreen(),
+    ProfileScreeneg(),
   ];
 }

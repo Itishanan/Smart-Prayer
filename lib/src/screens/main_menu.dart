@@ -1,7 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:iconsax/iconsax.dart';
 import 'package:lottie/lottie.dart';
 import 'package:smartprayer/home/ayaoftheday/api_service.dart';
 
@@ -12,7 +11,6 @@ import 'package:smartprayer/src/controllers/prayertime_controller.dart';
 import '../../home/ayaoftheday/aya_of_the_day_container.dart';
 import '../common_widgets/childactivitescontainer.dart';
 import '../common_widgets/prayer_times.dart';
-import '../data/repository/authentication_repository.dart';
 
 class MainMenu extends StatelessWidget {
   MainMenu({Key? key}) : super(key: key);
