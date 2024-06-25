@@ -106,8 +106,6 @@ class AuthenticationRepository extends GetxController {
         throw SFirebaseException(e.code).message;
       } on FormatException catch (_) {
         throw const FormatException();
-      } on PlatformException catch (e) {
-        throw SPlatformException(e.code).message;
       } catch (_) {
         throw 'Something went wrong. Please try again';
       }

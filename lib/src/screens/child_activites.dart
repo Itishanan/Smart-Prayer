@@ -90,7 +90,11 @@ class _ChildActivitiesState extends State<ChildActivities> {
         itemCount: _videoUrls.length,
         itemBuilder: (context, index) {
           return ListTile(
-            title: Text('Video ${index + 1}'),
+            title: Container(
+              color: Colors.grey[200],
+              padding: const EdgeInsets.all(8.0),
+              child: Text('Video ${index + 1}'),
+            ),
             onTap: () {
               Navigator.push(
                 context,

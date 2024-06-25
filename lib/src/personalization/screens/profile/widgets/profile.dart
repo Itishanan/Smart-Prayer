@@ -1,9 +1,9 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
 import 'package:iconsax/iconsax.dart';
 import 'package:smartprayer/src/common_widgets/t_circularimage.dart';
+import 'package:smartprayer/src/data/repository/authentication_repository.dart';
 import 'package:smartprayer/src/personalization/screens/settings/settings.dart';
 
 import 'profile_menu.dart';
@@ -65,13 +65,8 @@ class ProfileScreeneg extends StatelessWidget {
 
               ProfileMenu(
                 title: 'Name',
-                onPressed: () {} ,
-                value: 'null $user',
-              ),
-              ProfileMenu(
-                title: 'UserName',
-                value: 'WaleedShahid24',
                 onPressed: () {},
+                value: user?.displayName ?? 'Anonymous',
               ),
 
               const SizedBox(height: 8.0),
@@ -82,39 +77,37 @@ class ProfileScreeneg extends StatelessWidget {
               const SizedBox(height: 8.0),
 
               ProfileMenu(
-                title: 'UserID',
-                value: '240301',
-                icon: Iconsax.copy,
-                onPressed: () {},
-              ),
-              ProfileMenu(
                 title: 'E-Mail',
-                value: 'user',
+                value: user?.email ?? 'Anonymous',
                 onPressed: () {},
               ),
               ProfileMenu(
                 title: 'Phone Number',
-                value: '0318-6170099',
-                onPressed: () {},
+                value: user?.phoneNumber ?? 'Null',
+                onPressed: () {
+                  if (user?.phoneNumber == null) {
+                    Get.snackbar('Phone Number', 'Not Provided');
+                  }
+
+                },
               ),
-              ProfileMenu(
-                title: 'Gender',
-                value: 'male',
-                onPressed: () {},
-              ),
-              ProfileMenu(
-                title: 'Date of Birth',
-                value: '24 march 2001',
-                onPressed: () {},
-              ),
+
+
               const Divider(),
               const SizedBox(height: 8.0),
 
               Center(
-                child: TextButton(
-                  onPressed: () {},
-                  child: const Text('Create Account',
-                      style: TextStyle(color: Colors.red)),
+                child: ElevatedButton(
+                  onPressed: () {
+                    AuthenticationRepository.instance.logout();
+                  },
+                  child: const SizedBox(
+                    width: double.infinity/30,
+                    child: Center(
+                      child: Text('Sign Out',
+                          style: TextStyle(color: Colors.white)),
+                    ),
+                  ),
                 ),
               )
             ],

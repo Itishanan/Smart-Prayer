@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:smartprayer/src/common_widgets/posturedetectcarousel.dart';
+
+import '../common_widgets/childactivitescontainer.dart';
  class aiscreen extends StatelessWidget {
    const aiscreen({super.key});
 
@@ -22,6 +24,12 @@ import 'package:smartprayer/src/common_widgets/posturedetectcarousel.dart';
             Padding(
               padding: EdgeInsets.only(left: 10, ),
               child: PostureDetectionCarousel(top: 0, bottom: 10,left: 220),
+
+            ),
+            Padding(
+              padding: EdgeInsets.only(left: 10, top: 20,),
+              child: childactivitescontainer(),
+
             ),
            ],
          ),

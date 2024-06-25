@@ -68,21 +68,7 @@ class MainMenu extends StatelessWidget {
                     const SizedBox(
                       height: 10,
                     ),
-                    CarouselSlider(
-                      options: CarouselOptions(
-                        height: 130,
-                        autoPlay: true,
-                        autoPlayInterval: const Duration(seconds: 5),
-                        enlargeCenterPage: true,
-                        enableInfiniteScroll: true,
 
-                      ),
-                      items: const [
-                        childactivitescontainer(),
-                        childactivitescontainer(),
-                        childactivitescontainer(),
-                      ]
-                    ),
 
                     const SizedBox(
                       height: 10,
@@ -120,10 +106,9 @@ class MainMenu extends StatelessWidget {
               ),
               child: Obx(() {
                 if (_prayerTimesController.prayerTimes.isNotEmpty) {
-                  final currentPrayer = _prayerTimesController.prayerTimes
-                      .firstWhere((time) => time.time.isAfter(DateTime.now()),
-                          orElse: () =>
-                              _prayerTimesController.prayerTimes.last);
+                  final currentPrayer = _prayerTimesController.prayerTimes.firstWhere(
+                      (time) => time.time.isAfter(DateTime.now()),
+                      orElse: () => _prayerTimesController.prayerTimes.first);
                   final nextPrayerIndex = _prayerTimesController.prayerTimes
                           .indexWhere((time) => time == currentPrayer) +
                       1;
@@ -179,6 +164,7 @@ class MainMenu extends StatelessWidget {
                                       color: Colors.white70,
                                       fontStyle: FontStyle.italic),
                                 ),
+
                               ],
                             ),
                           ),

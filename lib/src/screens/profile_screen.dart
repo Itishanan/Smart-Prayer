@@ -136,9 +136,8 @@ class ProfileScreen extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.all(20.0),
             child: SizedBox(
-              width: double.infinity,
+              width: double.infinity/50,
               child: ElevatedButton(
-
                 onPressed: () async {
                   AuthenticationRepository.instance.logout();
                 },

@@ -41,6 +41,7 @@ dependencies:
   video_player: ^2.8.6
   firebase_storage: ^11.6.9
   google_sign_in: ^6.2.1
+  geocoding: ^3.0.0
 
 dev_dependencies:
   flutter_test:

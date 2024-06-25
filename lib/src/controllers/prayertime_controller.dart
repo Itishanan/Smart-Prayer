@@ -1,7 +1,9 @@
 import 'package:flutter/foundation.dart';
+
 import 'package:get/get.dart';
 import 'package:location/location.dart';
 import 'package:adhan/adhan.dart';
+
 
 class PrayerTime {
   final String name;
@@ -11,11 +13,13 @@ class PrayerTime {
   PrayerTime({required this.name, required this.time});
 }
 
+
 class PrayerTimesController extends GetxController {
   final RxList<PrayerTime> _prayerTimes = <PrayerTime>[].obs;
   List<PrayerTime> get prayerTimes => _prayerTimes;
 
   final Location location = Location();
+
 
   @override
   void onInit() {
@@ -32,6 +36,7 @@ class PrayerTimesController extends GetxController {
         madhab: Madhab.shafi,
         fajrAngle: 18,
         ishaAngle: 18,
+
       );
       final date = DateComponents.from(DateTime.now());
       final prayerTimes = PrayerTimes(coordinates, date, params);
