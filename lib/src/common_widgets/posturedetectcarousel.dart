@@ -83,7 +83,7 @@ class PostureDetectionCarousel extends StatelessWidget {
                   backgroundColor: Colors.white,
                 ),
                 onPressed: () {
-                  Get.to(() => PostureDetection());
+                  Get.to(() => PostureDetectionScreen());
                 },
                 child: const Text(
                   'Check Now',

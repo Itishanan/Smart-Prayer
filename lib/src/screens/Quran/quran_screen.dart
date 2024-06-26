@@ -149,7 +149,7 @@ class QuranScreen extends StatelessWidget {
                   scrollDirection: Axis.horizontal,
                   children: [
                     buildQuranTile('SURAH', 0),
-                    buildQuranTile('DIKHR', 1),
+
         
                   ],
                 ),

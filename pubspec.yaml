@@ -42,6 +42,10 @@ dependencies:
   firebase_storage: ^11.6.9
   google_sign_in: ^6.2.1
   geocoding: ^3.0.0
+  tflite_v2: ^1.0.0
+  tflite_flutter: ^0.10.4
+  flutter_launcher_icons: ^0.13.1
+
 
 dev_dependencies:
   flutter_test:
@@ -85,6 +89,8 @@ flutter:
     - assets/quran/quean_screen.png
     - assets/images/childlearning.png
     - assets/videos/
+    - assets/model/pose_classifier.tflite
+    - assets/model/pose_labels.txt
   
 
   
